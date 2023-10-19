@@ -266,6 +266,19 @@ class TypeForm
     }
 
     /**
+     * fetch the webhooks for a form.
+     *
+     * @param string $formId
+     * @param array $params
+     * @return array
+     * @throws \Exception
+     */
+    public function getWebhooks($formId, array $params = [])
+    {
+        return $this->call('forms/' . $formId. '/webhooks', $params);
+    }
+
+    /**
      * validate a signature
      * https://developer.typeform.com/webhooks/secure-your-webhooks/
      * @param string $signature
